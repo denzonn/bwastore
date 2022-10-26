@@ -27,6 +27,12 @@ Route::get('/categories', [
     App\Http\Controllers\CategoryController::class,
     'index',
 ])->name('categories');
+
+Route::get('/categories/{id}', [
+    App\Http\Controllers\CategoryController::class,
+    'detail',
+])->name('categories-detail');
+
 Route::get('/details/{id}', [
     App\Http\Controllers\DetailController::class,
     'index',
