@@ -37,10 +37,18 @@ Route::get('/details/{id}', [
     App\Http\Controllers\DetailController::class,
     'index',
 ])->name('detail');
+
+Route::post('/details/{id}', [
+    App\Http\Controllers\DetailController::class,
+    'add',
+])->name('detail-add');
+
+
 Route::get('/cart', [
     App\Http\Controllers\CartController::class,
     'index',
 ])->name('cart');
+
 Route::get('/success', [
     App\Http\Controllers\CartController::class,
     'success',
