@@ -43,11 +43,15 @@ Route::post('/details/{id}', [
     'add',
 ])->name('detail-add');
 
-
 Route::get('/cart', [
     App\Http\Controllers\CartController::class,
     'index',
 ])->name('cart');
+
+Route::delete('/cart/{id}', [
+    App\Http\Controllers\CartController::class,
+    'delete',
+])->name('cart-delete');
 
 Route::get('/success', [
     App\Http\Controllers\CartController::class,
