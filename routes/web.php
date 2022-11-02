@@ -53,6 +53,16 @@ Route::delete('/cart/{id}', [
     'delete',
 ])->name('cart-delete');
 
+Route::post('/checkout', [
+    App\Http\Controllers\CheckoutController::class,
+    'process',
+])->name('checkout');
+
+Route::post('/checkout/callback', [
+    App\Http\Controllers\CheckoutController::class,
+    'callback',
+])->name('midtrans-callback');
+
 Route::get('/success', [
     App\Http\Controllers\CartController::class,
     'success',
